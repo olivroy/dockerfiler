@@ -36,7 +36,7 @@ file.copy("DESCRIPTION", descdir)
 
 usethis::with_project(descdir, {
   test_that("dock_from_desc works", {
-    my_dock <- dock_from_desc(file.path(descdir, "DESCRIPTION"))
+    my_dock <- dockerfiler::dock_from_desc(file.path(descdir, "DESCRIPTION"))
 
     expect_s3_class(my_dock, "R6")
     expect_s3_class(my_dock, "Dockerfile")
