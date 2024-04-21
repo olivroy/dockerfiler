@@ -7,15 +7,15 @@
 #' @keywords internal
 #' @noRd
 gen_base_image <- function(
-  distro = "bionic",
+  # distro = "bionic",
   r_version = "4.0",
-  FROM = "rstudio/r-base"
+  FROM = "rocker/r-base"
 ) {
-  distro <- match.arg(distro, available_distros)
+  # distro <- match.arg(distro, available_distros)
 
-  if (FROM == "rstudio/r-base") {
-    glue::glue("{FROM}:{r_version}-{distro}")
-  } else {
+  if (FROM == "rocker/r-base") {
     glue::glue("{FROM}:{r_version}")
+  } else {
+    glue::glue("{FROM}")
   }
 }
